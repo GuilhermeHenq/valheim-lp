@@ -14,8 +14,15 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Valheim - Biomas",
   description: "Explore os biomas do mundo de Valheim",
-    generator: 'v0.dev'
-}
+  generator: "v0.dev",
+  icons: {
+    icon: [
+      { url: "/valheim-favicon.png" },
+      { url: "/valheim-favicon.png", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
+};
+
 
 export default function RootLayout({
   children,

@@ -6,25 +6,24 @@ import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
 
 export function AudioPlayer({ className }: { className?: string }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.02);
+  const [isPlaying, setIsPlaying] = useState(true); // começa como tocando
+  const [volume, setVolume] = useState(0.02); // som ambiente
   const [isMuted, setIsMuted] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  
+
   useEffect(() => {
     const audio = new Audio("/valheim-music.mp3");
     audio.loop = true;
-    audio.volume = 0.02;
+    audio.volume = volume;
     audioRef.current = audio;
 
     audio
       .play()
-      .then(() => {
-        setIsPlaying(true);
-      })
-      .catch((err) => {
+      .then(() => setIsPlaying(true))
+      .catch(() => {
         console.warn("Autoplay bloqueado. Usuário precisa interagir primeiro.");
+        setIsPlaying(false); // fallback
       });
 
     return () => {
@@ -70,11 +69,17 @@ export function AudioPlayer({ className }: { className?: string }) {
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
     >
+      {/* Play/Pause */}
       <Button
         variant="ghost"
         size="icon"
         onClick={togglePlay}
-        className="h-8 w-8 rounded-full bg-valheim-gold/20 text-valheim-gold hover:bg-valheim-gold/30 hover:text-white"
+        className={cn(
+          "h-8 w-8 rounded-full text-valheim-gold hover:text-white transition-colors",
+          isPlaying
+            ? "bg-valheim-gold/20 hover:bg-valheim-gold/30"
+            : "bg-red-500/20 hover:bg-red-500/40 text-red-500"
+        )}
       >
         <Music className="h-4 w-4" />
         <span className="sr-only">{isPlaying ? "Pausar" : "Tocar"} música</span>
@@ -82,6 +87,7 @@ export function AudioPlayer({ className }: { className?: string }) {
 
       {showControls && (
         <>
+          {/* Volume */}
           <div className="w-24">
             <Slider
               value={[isMuted ? 0 : volume]}
@@ -93,6 +99,7 @@ export function AudioPlayer({ className }: { className?: string }) {
             />
           </div>
 
+          {/* Mute */}
           <Button
             variant="ghost"
             size="icon"
