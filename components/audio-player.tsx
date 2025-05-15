@@ -62,8 +62,8 @@ export function AudioPlayer({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-valheim-dark/80 backdrop-blur-md rounded-full p-2 transition-all duration-300",
-        showControls ? "w-auto" : "w-12",
+        "fixed bottom-6 right-6 z-50 flex flex-col-reverse items-center gap-2 bg-valheim-dark/80 backdrop-blur-md rounded-full p-2 transition-all duration-300",
+        showControls ? "h-auto" : "h-12",
         className
       )}
       onMouseEnter={() => setShowControls(true)}
@@ -88,15 +88,37 @@ export function AudioPlayer({ className }: { className?: string }) {
       {showControls && (
         <>
           {/* Volume */}
-          <div className="w-24">
+          <div className="h-24 flex items-center justify-center">
             <Slider
+              orientation="vertical"
               value={[isMuted ? 0 : volume]}
               min={0}
               max={1}
               step={0.01}
               onValueChange={handleVolumeChange}
-              className="cursor-pointer"
+              className={cn(
+                "h-24 w-4 flex flex-col items-center justify-center gap-2",
+                // slider track
+                "[&>[data-orientation=vertical]]:relative",
+                "[&_[data-orientation=vertical]]:w-full",
+                "[&_[data-orientation=vertical]]:h-full",
+                "[&_[data-orientation=vertical]]:rounded-full",
+                "[&_[data-orientation=vertical]]:bg-valheim-gold/20",
+                // faixa azul dentro da dourada
+                "[&_[data-orientation=vertical]>[data-state=range]]:bg-blue-500",
+                "[&_[data-orientation=vertical]>[data-state=range]]:rounded-full",
+                "[&_[data-orientation=vertical]>[data-state=range]]:absolute",
+                "[&_[data-orientation=vertical]>[data-state=range]]:bottom-0",
+                "[&_[data-orientation=vertical]>[data-state=range]]:w-full",
+                // thumb
+                "[&_[role=slider]]:h-6 [&_[role=slider]]:w-6",
+                "[&_[role=slider]]:rounded-full",
+                "[&_[role=slider]]:bg-valheim-gold",
+                "[&_[role=slider]]:border-2 [&_[role=slider]]:border-valheim-gold"
+              )}
             />
+
+
           </div>
 
           {/* Mute */}
