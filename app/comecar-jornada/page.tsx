@@ -47,7 +47,7 @@ export default function StartJourneyPage() {
             {!videoPlaying ? (
               <div className="relative aspect-video overflow-hidden rounded-lg border border-valheim-gold/30 group cursor-pointer">
                 <Image
-                  src="/images/valheim-gameplay.png"
+                  src="/valheim.jpg"
                   alt="Valheim Gameplay"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -82,7 +82,8 @@ export default function StartJourneyPage() {
               <span className="text-valheim-gold">ADQUIRA</span> VALHEIM
             </h2>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Disponível para PC via Steam. Junte-se a milhões de jogadores e comece sua aventura viking hoje mesmo!
+              E Venha se juntar a esse jogo maravilhoso que eu amo! <br />
+                        <i className="text-gray-500">Guilherme Henrique</i>
             </p>
             <Button
               size="lg"
@@ -105,12 +106,11 @@ export default function StartJourneyPage() {
                 <path d="M16.83 16.83a4 4 0 1 1-5.66-5.66 4 4 0 0 1 5.66 5.66z"></path>
                 <line x1="12" y1="12" x2="12" y2="12.01"></line>
               </svg>
-              Comprar na Steam
+              Compre o jogo
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </div>
 
-          <CharacterSelection />
         </div>
       </section>
 

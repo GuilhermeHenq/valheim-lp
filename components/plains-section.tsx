@@ -92,7 +92,7 @@ export function PlainsSection() {
                 </motion.li>
               ))}
             </ul>
-            <Link href="/planicie" onClick={() => window.scrollTo(0, 0)}>
+            <Link href="https://valheim.fandom.com/pt-br/wiki/Planície" target="_blank" onClick={() => window.scrollTo(0, 0)}>
               <Button className="bg-biome-plains-light text-black hover:bg-biome-plains-light/80 transition-all duration-300">
                 Explorar Planície
                 <ChevronRight className="ml-2 h-4 w-4" />

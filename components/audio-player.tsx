@@ -1,78 +1,71 @@
-"use client"
+"use client";
+import { useState, useEffect, useRef } from "react";
+import { Volume2, VolumeX, Music } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Slider } from "@/components/ui/slider";
+import { cn } from "@/lib/utils";
 
-import { useState, useEffect, useRef } from "react"
-import { Volume2, VolumeX, Music } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Slider } from "@/components/ui/slider"
-import { cn } from "@/lib/utils"
-
-interface AudioPlayerProps {
-  className?: string
-}
-
-export function AudioPlayer({ className }: AudioPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [volume, setVolume] = useState(0.5)
-  const [isMuted, setIsMuted] = useState(false)
-  const [showControls, setShowControls] = useState(false)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
-
+export function AudioPlayer({ className }: { className?: string }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.02);
+  const [isMuted, setIsMuted] = useState(false);
+  const [showControls, setShowControls] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  
   useEffect(() => {
-    const audio = new Audio("/audio/valheim-theme.mp3")
-    audio.loop = true
-    audio.volume = volume
-    audioRef.current = audio
+    const audio = new Audio("/valheim-music.mp3");
+    audio.loop = true;
+    audio.volume = 0.02;
+    audioRef.current = audio;
+
+    audio
+      .play()
+      .then(() => {
+        setIsPlaying(true);
+      })
+      .catch((err) => {
+        console.warn("Autoplay bloqueado. Usuário precisa interagir primeiro.");
+      });
 
     return () => {
-      audio.pause()
-      audio.src = ""
-    }
-  }, [])
+      audio.pause();
+      audio.src = "";
+    };
+  }, []);
 
   useEffect(() => {
-    if (!audioRef.current) return
-
-    if (isPlaying) {
-      audioRef.current.play().catch((error) => {
-        console.error("Erro ao reproduzir áudio:", error)
-        setIsPlaying(false)
-      })
-    } else {
-      audioRef.current.pause()
-    }
-  }, [isPlaying])
-
-  useEffect(() => {
-    if (!audioRef.current) return
-
-    if (isMuted) {
-      audioRef.current.volume = 0
-    } else {
-      audioRef.current.volume = volume
-    }
-  }, [volume, isMuted])
+    if (!audioRef.current) return;
+    audioRef.current.volume = isMuted ? 0 : volume;
+  }, [volume, isMuted]);
 
   const togglePlay = () => {
-    setIsPlaying(!isPlaying)
-  }
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.error("Play bloqueado:", err));
+    }
+  };
 
   const toggleMute = () => {
-    setIsMuted(!isMuted)
-  }
+    setIsMuted((m) => !m);
+  };
 
-  const handleVolumeChange = (value: number[]) => {
-    setVolume(value[0])
-    if (value[0] > 0 && isMuted) {
-      setIsMuted(false)
-    }
-  }
+  const handleVolumeChange = (v: number[]) => {
+    setVolume(v[0]);
+    if (v[0] > 0 && isMuted) setIsMuted(false);
+  };
 
   return (
     <div
       className={cn(
         "fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-valheim-dark/80 backdrop-blur-md rounded-full p-2 transition-all duration-300",
         showControls ? "w-auto" : "w-12",
-        className,
+        className
       )}
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
@@ -112,5 +105,5 @@ export function AudioPlayer({ className }: AudioPlayerProps) {
         </>
       )}
     </div>
-  )
+  );
 }

@@ -50,9 +50,6 @@ export function Navbar() {
                 <span>{item.name}</span>
               </Link>
             ))}
-            <Button className="bg-transparent border border-valheim-gold text-valheim-gold hover:bg-valheim-gold/10 transition-all duration-300">
-              Explorar
-            </Button>
           </div>
 
           {/* Mobile Navigation Toggle */}

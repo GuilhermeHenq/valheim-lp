@@ -61,7 +61,7 @@ export function Footer() {
             <ul className="space-y-2">
               {["Guia de Sobrevivência", "Mapa Interativo", "Crafting", "Bestiário", "Atualizações"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-gray-400 hover:text-valheim-gold transition-colors duration-300">
+                  <Link href="https://valheim.fandom.com/pt-br/wiki/Valheim_Wiki" target="_blank" className="text-gray-400 hover:text-valheim-gold transition-colors duration-300">
                     {item}
                   </Link>
                 </li>

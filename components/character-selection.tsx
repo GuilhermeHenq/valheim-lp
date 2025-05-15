@@ -13,7 +13,7 @@ const classes = [
     name: "Guerreiro",
     description: "Especialista em combate corpo a corpo com espadas e escudos. Alta resistência e força de ataque.",
     icon: <Sword className="h-8 w-8" />,
-    color: "from-red-700 to-red-900",
+    color: "#6f624e",
     stats: {
       força: 8,
       agilidade: 5,
@@ -26,7 +26,7 @@ const classes = [
     name: "Arqueiro",
     description: "Mestre em ataques à distância com arcos. Alta precisão e dano, mas baixa resistência.",
     icon: <Bow className="h-8 w-8" />,
-    color: "from-green-700 to-green-900",
+    color: "#6f624e",
     stats: {
       força: 5,
       agilidade: 9,
@@ -39,7 +39,7 @@ const classes = [
     name: "Construtor",
     description: "Especialista em construção e artesanato. Bônus em construção e mineração.",
     icon: <Hammer className="h-8 w-8" />,
-    color: "from-amber-700 to-amber-900",
+    color: "#6f624e",
     stats: {
       força: 7,
       agilidade: 4,
@@ -52,7 +52,7 @@ const classes = [
     name: "Explorador",
     description: "Mestre em navegação e exploração. Bônus em velocidade de movimento e resistência a elementos.",
     icon: <Shield className="h-8 w-8" />,
-    color: "from-blue-700 to-blue-900",
+    color: "#6f624e",
     stats: {
       força: 5,
       agilidade: 7,
@@ -65,7 +65,7 @@ const classes = [
     name: "Berserker",
     description: "Guerreiro feroz que sacrifica defesa por poder de ataque. Dano massivo, mas baixa resistência.",
     icon: <Axe className="h-8 w-8" />,
-    color: "from-purple-700 to-purple-900",
+    color: "#6f624e",
     stats: {
       força: 10,
       agilidade: 6,

@@ -75,7 +75,7 @@ export function MeadowsSection() {
             <ul className="space-y-4 mb-8">
               {[
                 "Recursos abundantes como madeira, pedra e couro",
-                "Inimigos fracos como Greylings e Javalis",
+                "Inimigos fracos como Anões Cinzentos e Javalis",
                 "Clima ameno e visibilidade excelente",
                 "Framboesas e cogumelos para alimentação básica",
               ].map((item, index) => (
@@ -92,7 +92,7 @@ export function MeadowsSection() {
                 </motion.li>
               ))}
             </ul>
-            <Link href="/prado" onClick={() => window.scrollTo(0, 0)}>
+            <Link href="https://valheim.fandom.com/pt-br/wiki/Prados" target="_blank" onClick={() => window.scrollTo(0, 0)}>
               <Button className="bg-biome-meadows-light text-black hover:bg-biome-meadows-light/80 transition-all duration-300">
                 Explorar Prado
                 <ChevronRight className="ml-2 h-4 w-4" />
@@ -109,7 +109,7 @@ export function MeadowsSection() {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-biome-meadows-light/30 to-biome-meadows-dark/30 rounded-lg blur-lg"></div>
               <div className="relative aspect-video overflow-hidden rounded-lg border border-biome-meadows-light/30">
-                <div className="w-full h-full bg-[url('/images/meadows.jpg')] bg-cover bg-center"></div>
+                <div className="w-full h-full bg-[url('/prado.png')] bg-cover bg-center"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
             </div>

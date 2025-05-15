@@ -24,7 +24,7 @@ export default function SwampPage() {
         subtitle="Um bioma sombrio e perigoso, com águas venenosas e árvores mortas, mas que esconde recursos valiosos como ferro e raízes antigas."
         color="biome-swamp-dark"
         textColor="biome-swamp-light"
-        backgroundImage="/images/swamp.png"
+        backgroundImage="swamp.jpg"
       />
 
       <div className="relative">
@@ -35,7 +35,7 @@ export default function SwampPage() {
           description="O Pântano é um dos biomas mais hostis de Valheim. Caracterizado por águas rasas e venenosas, árvores mortas e uma atmosfera opressiva, este local desafia até os guerreiros mais experientes. A visibilidade é extremamente baixa, especialmente à noite, e o terreno alagado dificulta a movimentação. No entanto, as recompensas para os corajosos são substanciais."
           color="biome-swamp-dark"
           textColor="biome-swamp-light"
-          image="/images/swamp.png"
+          image="/swamp.jpg"
           imageAlt="Pântano de Valheim"
           contentItems={[
             {

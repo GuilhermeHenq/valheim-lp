@@ -48,7 +48,7 @@ export function FeatureSection() {
                 </motion.li>
               ))}
             </ul>
-            <Button className="bg-valheim-blue text-black hover:bg-valheim-blue/80 transition-all duration-300">
+            <Button  className="bg-valheim-blue text-black hover:bg-valheim-blue/80 transition-all duration-300">
               Explorar Floresta Negra
               <ChevronRight className="ml-2 h-4 w-4" />
             </Button>

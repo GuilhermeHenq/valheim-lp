@@ -70,15 +70,7 @@ export function HeroSection() {
               </Button>
             </Link>
 
-            <Link href="/guia-sobrevivencia">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-valheim-blue text-valheim-blue hover:bg-valheim-blue/10 transition-all duration-300"
-              >
-                Ver Guia de Sobrevivência
-              </Button>
-            </Link>
+
           </motion.div>
         </motion.div>
       </div>

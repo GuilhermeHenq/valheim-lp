@@ -24,7 +24,7 @@ export default function MeadowsPage() {
         subtitle="O bioma inicial de Valheim, pacífico e verdejante, perfeito para os primeiros passos de sua jornada viking."
         color="biome-meadows-dark"
         textColor="biome-meadows-light"
-        backgroundImage="/images/meadows.jpg"
+        backgroundImage="/prado.png"
       />
 
       <div className="relative">
@@ -35,7 +35,7 @@ export default function MeadowsPage() {
           description="O Prado é o primeiro bioma que você encontrará em Valheim. Com seus campos abertos, colinas suaves e florestas esparsas, é o local perfeito para estabelecer sua primeira base e aprender os fundamentos da sobrevivência. O clima é geralmente ameno, com chuvas ocasionais que nutrem a vegetação abundante."
           color="biome-meadows-dark"
           textColor="biome-meadows-light"
-          image="/images/meadows.jpg"
+          image="/prado.png"
           imageAlt="Prado de Valheim"
           contentItems={[
             {

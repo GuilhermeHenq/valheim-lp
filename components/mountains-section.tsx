@@ -115,7 +115,7 @@ export function MountainsSection() {
                 </motion.li>
               ))}
             </ul>
-            <Link href="/montanhas" onClick={() => window.scrollTo(0, 0)}>
+            <Link href="https://valheim.fandom.com/pt-br/wiki/Montanha" target="_blank" onClick={() => window.scrollTo(0, 0)}>
               <Button className="bg-biome-mountain-light text-black hover:bg-biome-mountain-light/80 transition-all duration-300">
                 Explorar Montanhas
                 <ChevronRight className="ml-2 h-4 w-4" />

@@ -79,7 +79,7 @@ export function SwampSection() {
                 "Sucata de ferro encontrada em criptas submersas",
                 "Draugrs e sanguessugas espreitam nas águas escuras",
                 "Raízes antigas para poções especiais",
-                "Glow Mushrooms iluminam levemente o caminho",
+                "Gosmas iluminam levemente o caminho",
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -94,7 +94,7 @@ export function SwampSection() {
                 </motion.li>
               ))}
             </ul>
-            <Link href="/pantano" onClick={() => window.scrollTo(0, 0)}>
+            <Link href="https://valheim.fandom.com/pt-br/wiki/Pântano" target="_blank" onClick={() => window.scrollTo(0, 0)}>
               <Button className="bg-biome-swamp-light text-white hover:bg-biome-swamp-light/80 transition-all duration-300">
                 Explorar Pântano
                 <ChevronRight className="ml-2 h-4 w-4" />
@@ -111,7 +111,7 @@ export function SwampSection() {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-biome-swamp-glow/20 to-biome-swamp-light/30 rounded-lg blur-lg"></div>
               <div className="relative aspect-video overflow-hidden rounded-lg border border-biome-swamp-light/30">
-                <Image src="/images/swamp.png" alt="Pântano de Valheim" fill className="object-cover object-center" />
+                <Image src="swamp.jpg" alt="Pântano de Valheim" fill className="object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="fog-overlay opacity-30"></div>
               </div>

@@ -48,9 +48,9 @@ export function BlackForestSection() {
             <ul className="space-y-4 mb-8">
               {[
                 "Minério de cobre e estanho para criar bronze",
-                "Trolls e Greydwarfs hostis espreitam entre as árvores",
+                "Trolls e Anões Cinzentos hostis espreitam entre as árvores",
                 "Criptas antigas contendo tesouros valiosos",
-                "Cogumelos amarelos e mel para poções de cura",
+                "Cogumelos amarelos e mel para hidromel de cura",
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -65,7 +65,7 @@ export function BlackForestSection() {
                 </motion.li>
               ))}
             </ul>
-            <Link href="/floresta-negra" onClick={() => window.scrollTo(0, 0)}>
+            <Link href="https://valheim.fandom.com/pt-br/wiki/Floresta_Negra" target="_blank" onClick={() => window.scrollTo(0, 0)}>
               <Button className="bg-biome-forest-light text-white hover:bg-biome-forest-light/80 transition-all duration-300">
                 Explorar Floresta Negra
                 <ChevronRight className="ml-2 h-4 w-4" />

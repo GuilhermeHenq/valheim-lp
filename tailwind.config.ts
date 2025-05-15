@@ -107,7 +107,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        "meadows-pattern": "url('/images/meadows.jpg')",
+        "meadows-pattern": "url('/prado.png')",
         "forest-pattern": "url('/images/black-forest.jpg')",
       },
     },
