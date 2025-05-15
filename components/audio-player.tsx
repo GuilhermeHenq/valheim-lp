@@ -6,8 +6,8 @@ import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
 
 export function AudioPlayer({ className }: { className?: string }) {
-  const [isPlaying, setIsPlaying] = useState(true); // começa como tocando
-  const [volume, setVolume] = useState(0.02); // som ambiente
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [volume, setVolume] = useState(0.2); 
   const [isMuted, setIsMuted] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -23,7 +23,7 @@ export function AudioPlayer({ className }: { className?: string }) {
       .then(() => setIsPlaying(true))
       .catch(() => {
         console.warn("Autoplay bloqueado. Usuário precisa interagir primeiro.");
-        setIsPlaying(false); // fallback
+        setIsPlaying(false);
       });
 
     return () => {
@@ -98,19 +98,16 @@ export function AudioPlayer({ className }: { className?: string }) {
               onValueChange={handleVolumeChange}
               className={cn(
                 "h-24 w-4 flex flex-col items-center justify-center gap-2",
-                // slider track
                 "[&>[data-orientation=vertical]]:relative",
                 "[&_[data-orientation=vertical]]:w-full",
                 "[&_[data-orientation=vertical]]:h-full",
                 "[&_[data-orientation=vertical]]:rounded-full",
                 "[&_[data-orientation=vertical]]:bg-valheim-gold/20",
-                // faixa azul dentro da dourada
                 "[&_[data-orientation=vertical]>[data-state=range]]:bg-blue-500",
                 "[&_[data-orientation=vertical]>[data-state=range]]:rounded-full",
                 "[&_[data-orientation=vertical]>[data-state=range]]:absolute",
                 "[&_[data-orientation=vertical]>[data-state=range]]:bottom-0",
                 "[&_[data-orientation=vertical]>[data-state=range]]:w-full",
-                // thumb
                 "[&_[role=slider]]:h-6 [&_[role=slider]]:w-6",
                 "[&_[role=slider]]:rounded-full",
                 "[&_[role=slider]]:bg-valheim-gold",
@@ -121,7 +118,6 @@ export function AudioPlayer({ className }: { className?: string }) {
 
           </div>
 
-          {/* Mute */}
           <Button
             variant="ghost"
             size="icon"
